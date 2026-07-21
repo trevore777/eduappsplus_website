@@ -1,37 +1,66 @@
-# EDU Apps Plus V1.1 — No Database
+# EDU Apps Plus Website V1.2
+
+Database-free, Vercel-native Next.js app directory.
+
+## Features
+- Apps grouped into separate subject areas.
+- Sticky subject navigation at the top jumps directly to each subject section.
+- Search by app name, subject, year level or description.
+- Teacher App Manager with add/edit/delete, URL editing, subject assignment, status, feature toggle and display order.
+- Secure signed-cookie admin login that works on Vercel serverless.
+- No PostgreSQL and no database.
+- Local editing writes directly to `data/apps.json`.
+- Optional Vercel admin editing commits `data/apps.json` to GitHub, triggering a normal Vercel redeploy.
 
 ## Local setup
+
 ```bash
 npm install
 cp .env.example .env
 npm run dev
 ```
-Open `http://localhost:3000`.
 
-Admin login: `http://localhost:3000/admin/login`
+Open:
+- Website: http://localhost:3000
+- Teacher App Manager: http://localhost:3000/admin/login
 
-Default development password: `EduAppsPlus2026!`
+Default local password if `ADMIN_PASSWORD` is unset:
+
+`EduAppsPlus2026!`
+
+Set a different password in `.env`.
 
 ## Vercel environment variables
-Set these in **Vercel → Project → Settings → Environment Variables**:
 
-- `ADMIN_PASSWORD` — choose your private admin password.
-- `AUTH_SECRET` — a long random string, ideally 32+ characters.
+Required:
+- `ADMIN_PASSWORD` — your chosen teacher/admin password
+- `AUTH_SECRET` — a long random secret string
 
-Then redeploy.
+For browser-based editing on the deployed Vercel site, also set:
+- `GITHUB_TOKEN` — fine-grained GitHub token with Contents read/write for this repository only
+- `GITHUB_OWNER` — your GitHub username/organisation
+- `GITHUB_REPO` — e.g. `eduappsplus_website`
+- `GITHUB_BRANCH` — usually `main`
 
-## Adding/editing apps
-The catalogue is stored in `data/apps.json`. Edit that file, commit, and push. Vercel will redeploy automatically from GitHub.
+When you save in Teacher App Manager on Vercel, the app commits `data/apps.json` to GitHub. Vercel then redeploys from that commit.
 
-This version intentionally uses no database. The admin login uses a signed cookie rather than an in-memory Express session, so it works correctly across Vercel serverless requests.
+## Important URL notes
 
-## Internal links needing a full URL
-Two supplied links are relative school-portal paths and are not published as clickable public app cards:
-
+Two supplied school links were incomplete:
 - Coding Club: `/homepage/36034`
 - Year 10 Digital Solutions: `/homepage/53605`
 
-Replace each with a full URL such as `https://school-portal.example/homepage/36034` when known, then change its `status` from `internal` to `published`.
+They are included as drafts with no clickable public URL. Use Teacher App Manager to add the complete `https://...` URL when known.
 
-## Student Evidence
-The supplied Student Evidence URL currently points to Render because that is the URL provided in the app list. When the AWS hostname is ready, replace it in `data/apps.json` with the AWS-backed URL, ideally `https://evidence.eduappsplus.com.au`.
+Student Evidence is currently set to the URL supplied:
+`https://student-evidence-app.onrender.com`
+
+Since the intended architecture is Student Evidence on AWS, edit that URL in Teacher App Manager once the AWS-backed public address is ready (for example `https://evidence.eduappsplus.com.au`).
+
+## Recommended deployment
+
+1. Push this repository to GitHub.
+2. Import it into Vercel.
+3. Add environment variables in Vercel Project Settings.
+4. Deploy.
+5. Later point `www.eduappsplus.com.au` to this Vercel project.
