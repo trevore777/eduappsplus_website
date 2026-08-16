@@ -308,5 +308,16 @@
     "featured": false,
     "status": "published",
     "order": 1
+  },
+  {
+    "id": "small-job-tracker",
+    "name": "Small Job Tracker",
+    "subject": "Teacher Tools",
+    "year": "General",
+    "description": "Tracks small software jobs through quoting, prototype, development, modifications, payments, deployment and handover.",
+    "url": "https://small-job-tracker.vercel.app/",
+    "featured": false,
+    "status": "published",
+    "order": 2
   }
 ]
