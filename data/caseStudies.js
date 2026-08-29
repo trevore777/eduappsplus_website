@@ -9,7 +9,8 @@ export const caseStudies = [
     solution: "Student Evidence brings student writing, draft history, teacher monitoring, assessment workflows and AI-assisted review into one database-backed platform.",
     features: ["Teacher and student dashboards", "Authentication and user roles", "Real-time activity monitoring", "Automatic draft history and progress evidence", "AI-assisted assessment workflows", "Cloud file storage and PDF workflows"],
     tech: ["Node.js", "Express", "PostgreSQL", "AWS", "S3", "AI integration"],
-    capability: "Full-stack development, PostgreSQL, AWS, dashboards, authentication, real-time monitoring and AI"
+    capability: "Full-stack development, PostgreSQL, AWS, dashboards, authentication, real-time monitoring and AI",
+    liveUrl: "https://www.eduappsplus.com.au/login"
   },
   {
     slug: "pracpath",
@@ -21,7 +22,8 @@ export const caseStudies = [
     solution: "PracPath provides a shared workflow where participants can plan placement activities, record progress and complete mentor/mentee processes in one application.",
     features: ["Mentor and student accounts", "Placement schedules", "Shared workflow and progress tracking", "Lesson and activity planning", "Review and finalisation processes", "Role-based application views"],
     tech: ["React", "Node.js", "Database workflows", "Authentication"],
-    capability: "Multi-user workflow and platform development"
+    capability: "Multi-user workflow and platform development",
+    liveUrl: "https://pracpath-mentor-pst-pi.vercel.app/"
   },
   {
     slug: "kofta-delights",
@@ -33,7 +35,8 @@ export const caseStudies = [
     solution: "Kofta Delights combines menu selection, ordering, payment integration and an operational order queue in a mobile-friendly application.",
     features: ["Mobile-friendly menu and ordering", "Cart and checkout workflow", "Payment integration", "Order queue", "Pickup workflow", "Operational wait-time support"],
     tech: ["Web application", "Payment APIs", "Responsive UI", "Order workflow"],
-    capability: "Real small-business application, ordering, payments and operations"
+    capability: "Real small-business application, ordering, payments and operations",
+    liveUrl: "https://kofta-delights.vercel.app/"
   },
   {
     slug: "friends-hot-50",
@@ -45,7 +48,8 @@ export const caseStudies = [
     solution: "Friends Hot 50 connects to Spotify, monitors playback and records unique songs into a live countdown experience with milestone prizes and event controls.",
     features: ["Spotify OAuth integration", "Automatic playback tracking", "Live countdown", "Prize milestones", "Event dashboard", "Shared party experience"],
     tech: ["Node.js", "Express", "Spotify API", "SQLite", "AWS", "WebSockets / live updates"],
-    capability: "Spotify/API integration and live event functionality"
+    capability: "Spotify/API integration and live event functionality",
+    liveUrl: "https://hot50.eduappsplus.com.au/"
   },
   {
     slug: "fishfinder-helper",

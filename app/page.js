@@ -9,13 +9,13 @@ export default function Home(){
       <div className="wrap">
         <div className="top">
           <Link className="brand" href="/">EDU APPS+</Link>
-          <nav className="mainNav"><a href="#services">What I Build</a><Link href="/case-studies">Case Studies</Link><a href="#about">About</a><a className="navCta" href="mailto:inquiries@eduappsplus.com.au?subject=App%20Development%20Enquiry">Start a Project</a></nav>
+          <nav className="mainNav"><a href="#services">What I Build</a><Link href="/case-studies">Case Studies</Link><a href="#about">About</a><Link className="navCta" href="/enquire">Start a Project</Link></nav>
         </div>
         <div className="commercialHero">
           <span className="eyebrow">Custom software development</span>
           <h1>Practical software.<br/>Real problems.<br/>Simple solutions.</h1>
           <p>EDU Apps Plus develops custom web, AI and mobile applications around the way people actually work — from an early idea or manual process through to a working prototype and deployed application.</p>
-          <div className="heroActions"><Link className="primaryButton" href="/case-studies">View Case Studies</Link><a className="secondaryButton" href="mailto:inquiries@eduappsplus.com.au?subject=App%20Development%20Enquiry">Discuss Your App Idea</a></div>
+          <div className="heroActions"><Link className="primaryButton" href="/case-studies">View Case Studies</Link><Link className="secondaryButton" href="/enquire">Discuss Your App Idea</Link></div>
         </div>
       </div>
     </header>
@@ -41,7 +41,7 @@ export default function Home(){
         <div className="aboutCopy"><p>EDU Apps Plus develops practical software for education, small business and specialist workflows. Projects range from focused prototypes to database-backed platforms, AI integrations and native mobile applications.</p><p>The starting point does not need to be a detailed technical specification. Often it is simply a process that takes too long, an idea that needs testing, or an existing application that needs to work better.</p></div>
       </div></section>
 
-      <section className="commercialSection"><div className="wrap"><div className="ctaPanel"><div><span className="eyebrow">Have an app idea?</span><h2>Tell me the problem you want to solve.</h2><p>Send a short description of your idea, existing workflow or application. We can work out the technical details from there.</p><p className="emailLine">inquiries@eduappsplus.com.au</p></div><a className="primaryButton" href="mailto:inquiries@eduappsplus.com.au?subject=App%20Development%20Enquiry">Start a Project</a></div></div></section>
+      <section className="commercialSection"><div className="wrap"><div className="ctaPanel"><div><span className="eyebrow">Have an app idea?</span><h2>Tell me the problem you want to solve.</h2><p>Send a short description of your idea, existing workflow or application. We can work out the technical details from there.</p><p className="emailLine">inquiries@eduappsplus.com.au</p></div><Link className="primaryButton" href="/enquire">Start a Project</Link></div></div></section>
     </main>
     <footer>EDU Apps Plus · <a href="mailto:inquiries@eduappsplus.com.au">inquiries@eduappsplus.com.au</a> · <a href="/admin/login">App Manager</a></footer>
   </>;
