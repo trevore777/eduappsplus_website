@@ -22,7 +22,8 @@ export const caseStudies = [
     solution: "PracPath provides a shared workflow where participants can plan placement activities, record progress and complete mentor/mentee processes in one application.",
     features: ["Mentor and student accounts", "Placement schedules", "Shared workflow and progress tracking", "Lesson and activity planning", "Review and finalisation processes", "Role-based application views"],
     tech: ["React", "Node.js", "Database workflows", "Authentication"],
-    capability: "Multi-user workflow and platform development"
+    capability: "Multi-user workflow and platform development",
+    liveUrl: "https://pracpath-mentor-pst-pi.vercel.app/"
   },
   {
     slug: "kofta-delights",
