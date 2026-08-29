@@ -48,7 +48,8 @@ export const caseStudies = [
     solution: "Friends Hot 50 connects to Spotify, monitors playback and records unique songs into a live countdown experience with milestone prizes and event controls.",
     features: ["Spotify OAuth integration", "Automatic playback tracking", "Live countdown", "Prize milestones", "Event dashboard", "Shared party experience"],
     tech: ["Node.js", "Express", "Spotify API", "SQLite", "AWS", "WebSockets / live updates"],
-    capability: "Spotify/API integration and live event functionality"
+    capability: "Spotify/API integration and live event functionality",
+    liveUrl: "https://hot50.eduappsplus.com.au/"
   },
   {
     slug: "fishfinder-helper",
