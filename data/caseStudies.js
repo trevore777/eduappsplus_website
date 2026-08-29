@@ -9,7 +9,8 @@ export const caseStudies = [
     solution: "Student Evidence brings student writing, draft history, teacher monitoring, assessment workflows and AI-assisted review into one database-backed platform.",
     features: ["Teacher and student dashboards", "Authentication and user roles", "Real-time activity monitoring", "Automatic draft history and progress evidence", "AI-assisted assessment workflows", "Cloud file storage and PDF workflows"],
     tech: ["Node.js", "Express", "PostgreSQL", "AWS", "S3", "AI integration"],
-    capability: "Full-stack development, PostgreSQL, AWS, dashboards, authentication, real-time monitoring and AI"
+    capability: "Full-stack development, PostgreSQL, AWS, dashboards, authentication, real-time monitoring and AI",
+    liveUrl: "https://www.eduappsplus.com.au/login"
   },
   {
     slug: "pracpath",
