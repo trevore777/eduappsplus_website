@@ -35,7 +35,8 @@ export const caseStudies = [
     solution: "Kofta Delights combines menu selection, ordering, payment integration and an operational order queue in a mobile-friendly application.",
     features: ["Mobile-friendly menu and ordering", "Cart and checkout workflow", "Payment integration", "Order queue", "Pickup workflow", "Operational wait-time support"],
     tech: ["Web application", "Payment APIs", "Responsive UI", "Order workflow"],
-    capability: "Real small-business application, ordering, payments and operations"
+    capability: "Real small-business application, ordering, payments and operations",
+    liveUrl: "https://kofta-delights.vercel.app/"
   },
   {
     slug: "friends-hot-50",
