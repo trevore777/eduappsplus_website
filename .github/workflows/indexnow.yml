@@ -1,0 +1,68 @@
+name: Notify IndexNow
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for deployment and submit sitemap URLs
+        shell: bash
+        run: |
+          KEY="5896298f303ff8ea5abb7ed22f7fbffe"
+          KEY_URL="https://www.eduappsplus.com.au/${KEY}.txt"
+
+          echo "Waiting for the production deployment to expose the IndexNow key..."
+          READY=0
+          for i in {1..20}; do
+            BODY="$(curl -fsS "$KEY_URL" 2>/dev/null || true)"
+            if [ "$BODY" = "$KEY" ]; then
+              READY=1
+              break
+            fi
+            sleep 15
+          done
+
+          if [ "$READY" -ne 1 ]; then
+            echo "IndexNow key file was not available after 5 minutes."
+            exit 1
+          fi
+
+          node <<'NODE'
+          const key = "5896298f303ff8ea5abb7ed22f7fbffe";
+          const host = "www.eduappsplus.com.au";
+          const keyLocation = `https://${host}/${key}.txt`;
+
+          const sitemapResponse = await fetch(`https://${host}/sitemap.xml`, { cache: "no-store" });
+          if (!sitemapResponse.ok) {
+            throw new Error(`Could not fetch sitemap: ${sitemapResponse.status}`);
+          }
+
+          const xml = await sitemapResponse.text();
+          const urlList = [...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]);
+
+          if (!urlList.length) {
+            throw new Error("No URLs were found in sitemap.xml");
+          }
+
+          const response = await fetch("https://api.indexnow.org/indexnow", {
+            method: "POST",
+            headers: { "Content-Type": "application/json; charset=utf-8" },
+            body: JSON.stringify({ host, key, keyLocation, urlList }),
+          });
+
+          const responseText = await response.text();
+          console.log(`Submitted ${urlList.length} URLs to IndexNow. Status: ${response.status}`);
+          if (responseText) console.log(responseText);
+
+          if (![200, 202].includes(response.status)) {
+            throw new Error(`IndexNow submission failed with status ${response.status}`);
+          }
+          NODE
