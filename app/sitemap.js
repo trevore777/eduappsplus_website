@@ -9,6 +9,7 @@ export default function sitemap() {
     "/education-apps",
     "/small-business-apps",
     "/small-business-app-cost",
+    "/web-app-vs-mobile-app",
     "/have-an-idea",
     "/case-studies",
     "/enquire",
