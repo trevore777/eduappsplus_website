@@ -14,6 +14,7 @@ export default function sitemap() {
     "/ai-for-business-apps",
     "/replace-spreadsheets-with-software",
     "/have-an-idea",
+    "/guides",
     "/case-studies",
     "/enquire",
   ].map((path) => ({
