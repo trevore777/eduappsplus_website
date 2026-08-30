@@ -10,6 +10,7 @@ export default function sitemap() {
     "/small-business-apps",
     "/small-business-app-cost",
     "/web-app-vs-mobile-app",
+    "/ai-for-business-apps",
     "/have-an-idea",
     "/case-studies",
     "/enquire",
