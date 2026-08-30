@@ -11,6 +11,7 @@ export default function sitemap() {
     "/small-business-app-cost",
     "/web-app-vs-mobile-app",
     "/ai-for-business-apps",
+    "/replace-spreadsheets-with-software",
     "/have-an-idea",
     "/case-studies",
     "/enquire",
