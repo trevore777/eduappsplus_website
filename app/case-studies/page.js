@@ -1,69 +1,21 @@
 import Link from "next/link";
 import { caseStudies } from "../../data/caseStudies";
 
-export const metadata = { title: "Case Studies | EDU Apps Plus" };
+export const metadata = {
+  title: "App Development Case Studies",
+  description: "See custom software projects built by EDU Apps Plus across education, small business, AI, APIs, payments, databases and live event applications.",
+  alternates: { canonical: "/case-studies" },
+};
 
-export default function CaseStudiesPage() {
+export default function CaseStudiesPage(){
   return <>
-    <header className="siteHeader portfolioHeader">
-      <div className="wrap">
-        <div className="top">
-          <Link className="brand" href="/">EDU APPS+</Link>
-          <nav className="mainNav">
-            <Link href="/#what-i-build">What I Build</Link>
-            <Link className="activeNav" href="/case-studies">Case Studies</Link>
-            <Link href="/#about">About</Link>
-            <Link className="navCta solidNavCta" href="/enquire">Start a Project</Link>
-          </nav>
-        </div>
-        <div className="portfolioHero">
-          <span className="eyebrow">Selected work</span>
-          <h1>Case Studies</h1>
-          <p>Real applications. Real impact. Built for real users.</p>
-        </div>
-      </div>
-    </header>
-
-    <main className="portfolioMain">
-      <div className="wrap">
-        <div className="filterPills" aria-label="Project categories">
-          <span className="filterPill activePill">All Projects</span>
-          <span className="filterPill">Education</span>
-          <span className="filterPill">Business</span>
-          <span className="filterPill">Lifestyle</span>
-          <span className="filterPill">AI / Automation</span>
-          <span className="filterPill">Mobile</span>
-        </div>
-
-        <div className="portfolioGrid">
-          {caseStudies.map(study => <article className={`portfolioCard project-${study.slug}`} key={study.slug}>
-            <div className="projectVisual" aria-hidden="true">
-              <div className="visualBrand">E+</div>
-              <div className="visualCopy">
-                <span>{study.category}</span>
-                <strong>{study.name}</strong>
-                <small>{study.status}</small>
-              </div>
-            </div>
-            <div className="portfolioCardBody">
-              <div className="portfolioMeta"><span className="badge">{study.category}</span><span className="statusLabel">{study.status}</span></div>
-              <h2>{study.name}</h2>
-              <p>{study.summary}</p>
-              <div className="cardActions">
-                {study.liveUrl && <a className="viewAppButton" href={study.liveUrl} target="_blank" rel="noreferrer">View App ↗</a>}
-                <Link className="similarButton" href={`/enquire?project=${study.slug}`}>Start a Similar Project</Link>
-              </div>
-              <Link className="caseStudyLink" href={`/case-studies/${study.slug}`}>Read full case study →</Link>
-            </div>
-          </article>)}
-        </div>
-
-        <section className="ctaPanel portfolioCta">
-          <div><span className="eyebrow">Have an idea?</span><h2>Tell me what you want the app to do.</h2><p>You do not need a technical specification. Start with the problem, process or idea and we can work from there.</p></div>
-          <Link className="primaryButton" href="/enquire">Start a Project</Link>
-        </section>
-      </div>
-    </main>
-    <footer>EDU Apps Plus · <a href="mailto:inquiries@eduappsplus.com.au">inquiries@eduappsplus.com.au</a></footer>
+    <header className="siteHeader compactHeader"><div className="wrap">
+      <div className="top"><Link className="brand" href="/">EDU APPS+</Link><nav className="mainNav"><Link href="/app-development">App Development</Link><Link href="/education-apps">Education Apps</Link><Link href="/small-business-apps">Small Business Apps</Link><Link href="/have-an-idea">Have an Idea?</Link><Link className="navCta" href="/enquire">Start a Project</Link></nav></div>
+      <div className="hero caseHero"><span className="eyebrow">Selected work</span><h1>Custom software case studies.</h1><p>Practical applications built around real education, business and specialist workflow problems.</p></div>
+    </div></header>
+    <main><section className="commercialSection"><div className="wrap">
+      <div className="caseGrid">{caseStudies.map(study => <article className="caseCard" key={study.slug}><div><span className="badge">{study.category}</span><span className="statusLabel">{study.status}</span></div><h2>{study.name}</h2><p>{study.summary}</p><div className="capability">{study.capability}</div><Link className="textLink" href={`/case-studies/${study.slug}`}>Read case study →</Link></article>)}</div>
+    </div></section></main>
+    <footer>EDU Apps Plus · Custom App & Software Development · <Link href="/">Home</Link></footer>
   </>;
 }
